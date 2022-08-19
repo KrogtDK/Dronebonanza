@@ -47,7 +47,6 @@ namespace DroneData
                                 
                             List[2][q2] = List[2][q2].Insert(5, ".");
                             List[2][q2] = List[2][q2].Insert(2, ".");
-                            Console.WriteLine(List[2][q2]);
                         }
                     }
                     if (q == 3)
@@ -66,8 +65,6 @@ namespace DroneData
                                 List[3][q3] = List[3][q3].Insert(5, ".");
                                 List[3][q3] = List[3][q3].Insert(2, ".");
                             }
-                                
-                            Console.WriteLine(List[3][q3]);
                         }
                     }
                     if (q == 13)
@@ -78,12 +75,17 @@ namespace DroneData
                         for (int q13 = 2; q13 < List[2].Count; q13++)
                         {
                             List[13].Add(List[2][q13] + "," + List[3][q13]);
-                            Console.WriteLine(List[13][q13]);
                         }
                         
                     }
                 }
-                    
+                StringBuilder Data = new StringBuilder();
+                for (int Æ = 0; Æ < 5359; Æ++)
+                {
+                    Data.AppendLine(List[0][Æ] + ";" + List[1][Æ] + ";" + List[2][Æ] + ";" + List[3][Æ] + ";" + List[4][Æ] + ";" + List[5][Æ] + ";" + List[6][Æ] + ";" + List[7][Æ] + ";" + List[8][Æ] + ";" + List[9][Æ] + ";" + List[10][Æ] + ";" + List[11][Æ] + ";" + List[12][Æ] + ";" + List[13][Æ] + ";");
+                }
+
+                File.WriteAllText(@"C:\Users\Oliver N. Jensen\Desktop\04. Manupulation af tekststrenge c#/flyvning2.csv", Data.ToString());    
             }
         Console.ReadKey();
         }
